@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FactoryMethodApplication<factory_method>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "equipo10_mdas_bloque1_sesion1.factory_method.FactoryMethodApplication",
+            "projectName": "factory_method",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
