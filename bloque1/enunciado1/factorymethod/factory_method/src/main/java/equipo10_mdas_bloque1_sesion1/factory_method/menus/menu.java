@@ -1,13 +1,18 @@
 package equipo10_mdas_bloque1_sesion1.factory_method.menus;
-
 import java.util.List;
 
+import equipo10_mdas_bloque1_sesion1.factory_method.Plato;
+
 public abstract class Menu {
-
-
-    public abstract double calculoPrecio(); //Calcula el precio total del menú aplicando el incremento del 2 % cuando corresponde.
-
-    public abstract List<Plato> obtenerPlatos(); //Devuelve la lista de platos que componen el menú.
-
-    public abstract void asignarPlato(Plato plato); //funcion para añadir un plato al menú, validando si el plato es compatible con las reglas de negocio (p. ej., no se añade postre en un menú para llevar).
-}
+    public List<Plato> lista;
+    public float CalcularPrcio(){
+        float preciottoal=0;
+        for(int i=0; i<lista.size();i++){
+            preciottoal=preciottoal+lista.get(i).getPrecio();
+        }
+        return preciottoal;
+    }
+    public List<Plato> getPlatos(){return lista;}
+    public void asignarPlato(Plato otropalto){
+        if(lista.size()<3){lista.add(otropalto);}}
+    }

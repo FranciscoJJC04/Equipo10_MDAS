@@ -1,8 +1,12 @@
 package equipo10_mdas_bloque1_sesion1.factory_method.factories;
+import equipo10_mdas_bloque1_sesion1.factory_method.TipoAcompanamiento;
+import equipo10_mdas_bloque1_sesion1.factory_method.menus.MenuSemanal;
+import equipo10_mdas_bloque1_sesion1.factory_method.menus.MenuTemporada;
+//https://java-design-patterns.com/es/patterns/abstract-factory/#explicacion
+public interface Factoria {
+MenuSemanal crearMenuSemanal(TipoAcompanamiento acompanamiento);
+MenuTemporada crearMenuTemporada(TipoAcompanamiento acompanamiento);
 
-public abstract class Factoria {
-
-    public abstract Menu crearMenuSemanal(); // Crea y devuelve un Menú Semanal listo para usar.
-
-    public abstract Menu crearMenuTemporada(); // Crea y devuelve un Menú de Temporada listo para usar.
 }
+
+

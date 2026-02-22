@@ -2,13 +2,16 @@ package equipo10_mdas_bloque1_sesion1.factory_method;
 
 public class Plato {
 
+
+
+
     private String nombre;
-    private double precio;
+    private float precio;
     private TipoPlato tipo;
     private TipoAcompanamiento acompanamiento;
     
 
-    public Plato(String nombre, double precio, TipoPlato tipo, TipoAcompanamiento acompanamiento) {
+    public Plato(String nombre, float precio, TipoPlato tipo, TipoAcompanamiento acompanamiento) {
         this.nombre = nombre;
         this.precio = precio;
         this.tipo = tipo;
@@ -25,7 +28,7 @@ public class Plato {
         return nombre;
     }
 
-    public double getPrecio() {
+    public float getPrecio() {
         return precio;
     }
 
@@ -43,7 +46,7 @@ public class Plato {
 
 
     //SETTERS
-    public void setPrecio(double precio) {
+    public void setPrecio(float precio) {
         this.precio = precio;
     }
 
