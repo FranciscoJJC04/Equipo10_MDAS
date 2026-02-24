@@ -1,5 +1,4 @@
 package equipo10_mdas_bloque1_sesion1.factory_method;
-
 public class Plato {
 
 
@@ -7,15 +6,15 @@ public class Plato {
 
     private String nombre;
     private float precio;
-    private TipoPlato tipo;
-    private TipoAcompanamiento acompanamiento;
+    private TipoPlato tipoPlato;
+    private TipoAcompanamiento tipoAcompanamiento;
     
 
     public Plato(String nombre, float precio, TipoPlato tipo, TipoAcompanamiento acompanamiento) {
         this.nombre = nombre;
         this.precio = precio;
-        this.tipo = tipo;
-        this.acompanamiento = acompanamiento;
+        this.tipoPlato = tipo;
+        this.tipoAcompanamiento = acompanamiento;
     }
 
     public void asignarPrecio(Plato origen) {  //Asigna el precio de un plato a otro.
@@ -37,11 +36,11 @@ public class Plato {
     }
 
     public TipoPlato getTipo() {
-        return tipo;
+        return tipoPlato;
     }
     
     public TipoAcompanamiento getAcompanamiento() {
-        return acompanamiento;
+        return tipoAcompanamiento;
     }
 
 
@@ -51,10 +50,10 @@ public class Plato {
     }
 
     public void setTipo(TipoPlato tipo) {
-        this.tipo = tipo;
+        this.tipoPlato = tipo;
     }
 
     public void setAcompanamiento(TipoAcompanamiento acompanamiento) {
-        this.acompanamiento = acompanamiento;
+        this.tipoAcompanamiento = acompanamiento;
     }
 }
