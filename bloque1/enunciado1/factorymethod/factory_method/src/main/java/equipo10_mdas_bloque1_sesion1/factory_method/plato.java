@@ -14,7 +14,15 @@ public class Plato {
         this.nombre = nombre;
         this.precio = precio;
         this.tipoPlato = tipo;
-        this.tipoAcompanamiento = acompanamiento;
+        
+        if(acompanamiento == null)
+        {
+            this.tipoAcompanamiento = TipoAcompanamiento.SIN_ACOMPANAMIENTO;
+        } 
+        else 
+        {
+            this.tipoAcompanamiento = acompanamiento;
+        }
     }
 
     public void asignarPrecio(Plato origen) {  //Asigna el precio de un plato a otro.
