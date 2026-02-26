@@ -9,14 +9,21 @@ public class FactoriaLlevar implements Factoria {
     public MenuSemanal crearMenuSemanal(TipoAcompanamiento acompanamiento){
         Plato principal=new Plato("Carne", 8.99f*1.02f, TipoPlato.PRINCIPAL, TipoAcompanamiento.PATATAS );
         principal.setAcompanamiento(acompanamiento);
-        return new MenuSemanal();
+
+        MenuSemanal menusemanal=new MenuSemanal();
+        menusemanal.asignarPlato(principal);
+        
+        return menusemanal;
     }
 
     @Override
     public MenuTemporada crearMenuTemporada(TipoAcompanamiento acompanamiento){
         Plato principal=new Plato("Carne", 8.99f*1.02f, TipoPlato.PRINCIPAL, TipoAcompanamiento.PATATAS );
         principal.setAcompanamiento(acompanamiento);
-        return new MenuTemporada();
+        
+        MenuTemporada menutemporada=new MenuTemporada();
+        menutemporada.asignarPlato(principal);
+        return menutemporada;
     }
 }
 
