@@ -49,6 +49,7 @@ public class Plato {
     
     public TipoAcompanamiento getAcompanamiento() {
         return tipoAcompanamiento;
+        
     }
 
 
