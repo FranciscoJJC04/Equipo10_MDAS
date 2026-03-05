@@ -1,7 +1,6 @@
-package equipo10_mdas_bloque1_sesion1.factory_method.menus;
+package factory_method.menus;
+import factory_method.Plato;
 import java.util.List;
-
-import equipo10_mdas_bloque1_sesion1.factory_method.Plato;
 
 public abstract class Menu {
     public List<Plato> lista;
@@ -19,8 +18,13 @@ public abstract class Menu {
     }
 
 
+    public void getPlatos(){
+        for(Plato p:lista){
+            System.out.println("Nombre: " + p.getNombre() + " | Precio: " + p.getPrecio());
+        }
+    System.out.println("Precio total: " + CalcularPrecio());
 
-    public List<Plato> getPlatos(){return lista;}
+}
 
 
     public void asignarPlato(Plato otroplato){

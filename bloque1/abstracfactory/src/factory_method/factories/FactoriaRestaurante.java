@@ -1,9 +1,9 @@
-package equipo10_mdas_bloque1_sesion1.factory_method.factories;
-import equipo10_mdas_bloque1_sesion1.factory_method.Plato;
-import equipo10_mdas_bloque1_sesion1.factory_method.TipoAcompanamiento;
-import equipo10_mdas_bloque1_sesion1.factory_method.TipoPlato;
-import equipo10_mdas_bloque1_sesion1.factory_method.menus.MenuSemanal;
-import equipo10_mdas_bloque1_sesion1.factory_method.menus.MenuTemporada;
+package factory_method.factories;
+import factory_method.Plato;
+import factory_method.TipoAcompanamiento;
+import factory_method.TipoPlato;
+import factory_method.menus.MenuSemanal;
+import factory_method.menus.MenuTemporada;
 
 
 // Creator concreto: crea menús con PRECIO BASE (sin recargo, consumo en restaurante).
