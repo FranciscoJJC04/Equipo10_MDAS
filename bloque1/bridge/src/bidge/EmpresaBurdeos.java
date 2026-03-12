@@ -1,15 +1,15 @@
 
 public class EmpresaBurdeos extends Empresa {
-    public EmpresaBurdeos(Taller workShop1, Taller workShop2)
+    public EmpresaBurdeos(Taller taller)
     {
-        super(workShop1, workShop2);
+        super(taller);
     }
 
     @Override
     public void crear()
     {
-        System.out.print("Amarillo ");
-        workShop1.work();
-        workShop2.work();
+        System.out.print("\n Burdeos ");
+        taller1.crear();
+
     }
 }
