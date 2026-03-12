@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Factura",
+            "request": "launch",
+            "mainClass": "Factura",
+            "projectName": "Equipo10_MDAS_ff846e80"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-FactoryMethodApplication<factory_method>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
