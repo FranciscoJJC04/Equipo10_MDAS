@@ -24,11 +24,11 @@ public class Plato {
     //GETTERS
     public String getNombre() {return nombre;}
     public float getPrecio() {return precio;}
-    public void setNombre(String nombre) {this.nombre = nombre;}
     public TipoPlato getTipo() {return tipoPlato;}
     public TipoAcompanamiento getAcompanamiento() {return tipoAcompanamiento;}
 
     //SETTERS
+    public void setNombre(String nombre) {this.nombre = nombre;}
     public void setPrecio(float precio) {this.precio = precio;}
     public void setTipo(TipoPlato tipo) {this.tipoPlato = tipo;}
     public void setAcompanamiento(TipoAcompanamiento acompanamiento) {this.tipoAcompanamiento = acompanamiento;}
