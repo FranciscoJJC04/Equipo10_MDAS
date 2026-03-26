@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Buscador",
+            "request": "launch",
+            "mainClass": "Buscador",
+            "projectName": "Equipo10_MDAS_ce6818cc"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Equipo10_MDAS_ce6818cc"
+        },
+        {
+            "type": "java",
             "name": "Factura",
             "request": "launch",
             "mainClass": "Factura",

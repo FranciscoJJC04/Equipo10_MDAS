@@ -1,19 +1,22 @@
+package Clases;
 import java.time.LocalDate;
+
+// Modelo simple: representa una opcion de transporte entre dos ciudades.
 public class Transporte {
     private String proveedor, ciudadOrigen, ciudadDestino;
     private LocalDate fechaSalida, fechaLlegada;
-    private int sitiosvacis;
+    private int plazas;
     
-    public Transporte(String proveedor, String ciudadOrigen, String ciudadDestino, LocalDate fechaSalida, LocalDate fechaLlegada, int sitiosvacis) {
+    public Transporte(String proveedor, String ciudadOrigen, String ciudadDestino, LocalDate fechaSalida, LocalDate fechaLlegada, int plazas) {
         this.proveedor = proveedor;
         this.ciudadOrigen = ciudadOrigen;
         this.ciudadDestino = ciudadDestino;
         this.fechaSalida = fechaSalida;
         this.fechaLlegada = fechaLlegada;
-        this.sitiosvacis = sitiosvacis;
+        this.plazas = plazas;
     }
 
-    //##################### SGetters ################
+    // Getters: lectura de propiedades de transporte.
     public String getProveedor() {
         return proveedor;
     }
@@ -29,11 +32,16 @@ public class Transporte {
     public LocalDate getFechaLlegada() {
         return fechaLlegada;
     }
-    public int getSitiosVacis() {
-        return sitiosvacis;
+    public int getPlazas() {
+        return plazas;
     }
 
-    //##################### Setters ################
+    // Alias para compatibilidad con codigo previo de la practica.
+    public int getSitiosVacis() {
+        return plazas;
+    }
+
+    // Setters: actualizacion de datos de transporte.
     public void setProveedor(String proveedor) {
         this.proveedor = proveedor;
     }
@@ -49,8 +57,12 @@ public class Transporte {
     public void setFechaLlegada(LocalDate fechaLlegada) {
         this.fechaLlegada = fechaLlegada;
     }
+    public void setPlazas(int plazas) {
+        this.plazas = plazas;
+    }
+
     public void setSitiosVacis(int sitiosvacis) {
-        this.sitiosvacis = sitiosvacis;
+        this.plazas = sitiosvacis;
     }
 
 }

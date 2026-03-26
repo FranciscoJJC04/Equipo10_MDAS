@@ -1,5 +1,7 @@
+package Clases;
 import java.time.LocalDate;
 
+// Modelo simple: representa una actividad que puede contratar un grupo.
 public class Actividad {
     private String actividadflipante, ciudad, tipo;
     private LocalDate fechaActividad;
@@ -13,7 +15,7 @@ public class Actividad {
         this.nPersonas = nPersonas;
     }
 
-    //##################### SGetters ################
+    // Getters: permiten leer los datos de la actividad.
     public String getActividadflipante() {
         return actividadflipante;
     }
@@ -30,7 +32,7 @@ public class Actividad {
         return nPersonas;
     }
 
-    //##################### Setters ################
+    // Setters: permiten modificar los datos si fuera necesario.
     public void setActividadflipante(String actividadflipante) {
         this.actividadflipante = actividadflipante;
     }
