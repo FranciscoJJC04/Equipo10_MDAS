@@ -9,6 +9,15 @@ public class ListaPorHabi implements Contador {
     public void adherir(Contador cont){listacacharros.add(cont);}
     
     @Override
+    public float getConsumoGlobal(){
+        float total=0;
+        for(Contador cont : listacacharros){
+            total=cont.getConsumoGlobal()+total;
+        }
+        return total;
+    }
+    
+    @Override
     public float getCoste(){
         float total=0;
         for(Contador cont : listacacharros){

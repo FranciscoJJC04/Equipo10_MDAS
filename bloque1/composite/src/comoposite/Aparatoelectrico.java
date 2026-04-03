@@ -24,6 +24,9 @@ public class Aparatoelectrico implements Contador{
                 }  
         }
         @Override
+        public float getConsumoGlobal(){return this.TotalHoras * this.Consumo;}
+
+        @Override
         public float getCoste(){return this.TotalCoste;}
 
 }

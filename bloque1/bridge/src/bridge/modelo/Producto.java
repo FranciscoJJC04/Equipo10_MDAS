@@ -1,3 +1,5 @@
+package bridge_modular.modelo;
+
 public class Producto {
     private String nombre;
     private double precio;
@@ -15,16 +17,8 @@ public class Producto {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public double getPrecio() {
         return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
     }
 
     public int getUnidades() {
@@ -39,32 +33,25 @@ public class Producto {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
     @Override
-    public String toString() {
-        return "Producto{" +
-                "nombre='" + nombre + '\'' +
-                ", precio=" + precio +
-                ", unidades=" + unidades +
-                ", tipo='" + tipo + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Producto producto = (Producto) o;
-
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (other == null || getClass() != other.getClass()) {
+            return false;
+        }
+        Producto producto = (Producto) other;
         return nombre.equals(producto.nombre);
     }
 
     @Override
     public int hashCode() {
         return nombre.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return nombre + " | Precio: " + precio + " | Stock: " + unidades + " | Tipo: " + tipo;
     }
 }

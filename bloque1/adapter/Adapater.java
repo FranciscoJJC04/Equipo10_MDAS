@@ -47,14 +47,22 @@ public class Adapater implements  Adaptador{
     // 3) Separar en varios ficheros
     @Override
     public void separarEnVarios(String fichero, int[] puntosCorte, String[] nombresSalida) throws Exception {
+        int inicio = 1;
 
-        String actual = fichero;
-
-        for (int i = 0; i < puntosCorte.length; i++) {
-            legacy.dividirFichero(actual, puntosCorte[i], nombresSalida[i], "temp.txt"); 
-            actual = "temp.txt";
+        for (int i = 0; i < puntosCorte.length && i < nombresSalida.length; i++) {
+            int fin = puntosCorte[i] - 1;
+            try (FileWriter fw = new FileWriter(nombresSalida[i])) {
+                if (fin >= inicio) {
+                    fw.write(legacy.extraerParrafo(fichero, inicio, fin));
+                }
+            }
+            inicio = puntosCorte[i];
         }
-        File Aborrar=new File(actual);
-        Aborrar.delete();
+
+        if (nombresSalida.length > puntosCorte.length) {
+            try (FileWriter fw = new FileWriter(nombresSalida[nombresSalida.length - 1])) {
+                fw.write(legacy.extraerParrafo(fichero, inicio, Integer.MAX_VALUE));
+            }
+        }
     }
 }

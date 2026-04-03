@@ -36,6 +36,7 @@ public class Factura {
         rabanales.adherir(ramonycajal);
         rabanales.adherir(aulario);
         rabanales.adherir(expendedora1);
+        System.out.println("Consumo Total Estimado del Campus Principal: "+ rabanales.getConsumoGlobal()+" W");
         System.out.println("Coste de todo: "+ rabanales.getCoste());
     }
 }

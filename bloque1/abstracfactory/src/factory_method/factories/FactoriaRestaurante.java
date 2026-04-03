@@ -28,18 +28,9 @@ public class FactoriaRestaurante implements Factoria {
 
     @Override
     public MenuTemporada crearMenuTemporada(TipoAcompanamiento acompanamiento) {
-        Plato entrante  = new Plato("Patatas-Foster", 8.99f, TipoPlato.ENTRANTE,  TipoAcompanamiento.SIN_ACOMPANAMIENTO);
-        Plato principal = new Plato("Bocadillo",      8.99f, TipoPlato.PRINCIPAL, TipoAcompanamiento.ENSALADA);
-        Plato postre    = new Plato("Donetes",        8.99f, TipoPlato.POSTRE,    TipoAcompanamiento.SIN_ACOMPANAMIENTO);
-
-        entrante.setAcompanamiento(acompanamiento);
-        principal.setAcompanamiento(acompanamiento);
-        postre.setAcompanamiento(acompanamiento);
-
         MenuTemporada menutemporada = new MenuTemporada();
-        menutemporada.asignarPlato(entrante);
-        menutemporada.asignarPlato(principal);
-        menutemporada.asignarPlato(postre);
+        Plato unico = new Plato("Bocadillo especial", 8.99f, TipoPlato.PRINCIPAL, acompanamiento);
+        menutemporada.asignarPlato(unico);
         return menutemporada;
     }
 }

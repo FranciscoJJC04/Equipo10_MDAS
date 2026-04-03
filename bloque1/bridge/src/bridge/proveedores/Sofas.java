@@ -1,11 +1,17 @@
-import java.util.*;
+package bridge_modular.proveedores;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class Sillas implements Proveedor {
-    private String nombre;
-    private List<Producto> stocks;
+import bridge_modular.modelo.Producto;
 
-    public Sillas(String nombre) {
+public class Sofas implements Proveedor {
+    private final String nombre;
+    private final List<Producto> stocks;
+
+    public Sofas(String nombre) {
         this.nombre = nombre;
         this.stocks = new ArrayList<>();
     }
@@ -13,7 +19,7 @@ public class Sillas implements Proveedor {
     @Override
     public List<Producto> buscarProductos() {
         return stocks.stream()
-                .filter(p -> p.getUnidades() > 0 && p.getTipo().equalsIgnoreCase("Silla"))
+                .filter(producto -> producto.getUnidades() > 0 && producto.getTipo().equalsIgnoreCase("Sofa"))
                 .collect(Collectors.toList());
     }
 
@@ -33,30 +39,26 @@ public class Sillas implements Proveedor {
 
     @Override
     public void agregarProducto(Producto producto) {
-        if (producto.getTipo().equalsIgnoreCase("Silla")) {
-            // Verificar si el producto ya existe, si es así sumar unidades
-            boolean existe = false;
-            for (Producto p : stocks) {
-                if (p.equals(producto)) {
-                    p.setUnidades(p.getUnidades() + producto.getUnidades());
-                    existe = true;
-                    break;
-                }
-            }
-            if (!existe) {
-                stocks.add(producto);
+        if (!producto.getTipo().equalsIgnoreCase("Sofa")) {
+            return;
+        }
+        for (Producto existente : stocks) {
+            if (existente.equals(producto)) {
+                existente.setUnidades(existente.getUnidades() + producto.getUnidades());
+                return;
             }
         }
+        stocks.add(producto);
     }
 
     @Override
     public void eliminarProducto(String nombre) {
-        stocks.removeIf(p -> p.getNombre().equals(nombre));
+        stocks.removeIf(producto -> producto.getNombre().equals(nombre));
     }
 
     @Override
     public String getTipo() {
-        return "Silla";
+        return "Sofa";
     }
 
     public String getNombre() {

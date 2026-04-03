@@ -14,8 +14,8 @@ public class Main {
         adapater.combinarParrafos("f1.txt", "f2.txt", r1, r2, "combinado.txt");
 
 
-        int[] cortes = {2};
-        String[] nombres = {"parte1.txt"};
+        int[] cortes = {2, 4};
+        String[] nombres = {"parte1.txt", "parte2.txt", "parte3.txt"};
         adapater.separarEnVarios("f1.txt", cortes, nombres);
 
         System.out.println("Proceso completado.");
