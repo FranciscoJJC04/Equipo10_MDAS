@@ -3,7 +3,7 @@ import java.util.Random;
 public class Factura {
     //Aquí tendremos el main para calcular el consum de los cachcarros
     //PARA LOS NUMROS ALEATORIOS: https://medium.com/@generativeai.saif/java-random-number-generator-5-methods-explained-with-examples-bf9e53abed3c
-    public static void main(String[] args) {
+    public static void mostrarFactura() {
         Random random=new Random();
         int nhoras=random.nextInt(24);
         System.out.println("Numero horas expendedora 1: "+ nhoras);

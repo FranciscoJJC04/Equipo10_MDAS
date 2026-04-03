@@ -5,7 +5,7 @@ import factory_method.factories.FactoriaLlevar;
 import factory_method.factories.FactoriaRestaurante;
 import factory_method.menus.Menu;
 
-public class FactoryMethodApplication {
+public class Main {
 
 	public static void main(String[] args) {
 		Factoria factoriaRestaurante = new FactoriaRestaurante();

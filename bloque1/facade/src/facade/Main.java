@@ -2,9 +2,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
-import Clases.Actividad;
-import Clases.Alojamiento;
-import Clases.Transporte;
 import Fachada.ResultadoViaje;
 import Fachada.SistemaViajesFacade;
 
@@ -41,7 +38,23 @@ public class Main {
                 // Una sola llamada a la fachada sustituye llamadas manuales a subsistemas.
                 ResultadoViaje resultado = facade.buscarViaje(inicio, fin, origen, destino, personas);
                 System.out.println("\n=== RESULTADO DE LA BUSQUEDA ===");
-                imprimirResultado(resultado);
+                System.out.println("Transportes encontrados: " + resultado.getTransportes().size());
+                for (Clases.Transporte t : resultado.getTransportes()) {
+                    System.out.println(" - " + t.getProveedor() + " | " + t.getCiudadOrigen() + " -> " + t.getCiudadDestino()
+                            + " | " + t.getFechaSalida() + " | plazas: " + t.getPlazas());
+                }
+
+                System.out.println("Alojamientos encontrados: " + resultado.getAlojamientos().size());
+                for (Clases.Alojamiento a : resultado.getAlojamientos()) {
+                    System.out.println(" - " + a.getNombre() + " | " + a.getCiudad() + " | "
+                            + a.getFechaEntrada() + " a " + a.getFechaSalida() + " | plazas: " + a.getPlazas());
+                }
+
+                System.out.println("Actividades encontradas: " + resultado.getActividades().size());
+                for (Clases.Actividad a : resultado.getActividades()) {
+                    System.out.println(" - " + a.getActividadflipante() + " | " + a.getCiudad() + " | "
+                            + a.getFechaActividad() + " | tipo: " + a.getTipo());
+                }
             } catch (DateTimeParseException e) {
                 System.out.println("Error: la fecha debe tener formato AAAA-MM-DD.");
             } catch (NumberFormatException e) {
@@ -58,26 +71,5 @@ public class Main {
 
         System.out.println("Programa finalizado.");
         scanner.close();
-    }
-
-    private static void imprimirResultado(ResultadoViaje r) {
-        // Presentacion del resultado unificado devuelto por la fachada.
-        System.out.println("Transportes encontrados: " + r.getTransportes().size());
-        for (Transporte t : r.getTransportes()) {
-            System.out.println(" - " + t.getProveedor() + " | " + t.getCiudadOrigen() + " -> " + t.getCiudadDestino()
-                    + " | " + t.getFechaSalida() + " | plazas: " + t.getPlazas());
-        }
-
-        System.out.println("Alojamientos encontrados: " + r.getAlojamientos().size());
-        for (Alojamiento a : r.getAlojamientos()) {
-            System.out.println(" - " + a.getNombre() + " | " + a.getCiudad() + " | "
-                    + a.getFechaEntrada() + " a " + a.getFechaSalida() + " | plazas: " + a.getPlazas());
-        }
-
-        System.out.println("Actividades encontradas: " + r.getActividades().size());
-        for (Actividad a : r.getActividades()) {
-            System.out.println(" - " + a.getActividadflipante() + " | " + a.getCiudad() + " | "
-                    + a.getFechaActividad() + " | tipo: " + a.getTipo());
-        }
     }
 }

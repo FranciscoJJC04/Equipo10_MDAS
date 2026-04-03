@@ -1,10 +1,10 @@
-package bridge_modular.buscadores;
+package bridge.buscadores;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import bridge_modular.modelo.Producto;
-import bridge_modular.proveedores.Proveedor;
+import bridge.modelo.Producto;
+import bridge.proveedores.Proveedor;
 
 public abstract class BuscadorPorPrecio {
     protected final List<Proveedor> proveedores;
