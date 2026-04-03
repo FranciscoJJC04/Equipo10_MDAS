@@ -1,0 +1,10 @@
+{
+  "java.project.sourcePaths": [
+    "bloque1/abstracfactory/src",
+    "bloque1/bridge/src",
+    "bloque1/composite/src",
+    "bloque1/adapter",
+    "bloque1/facade/src/facade"
+  ],
+  "java.project.outputPath": ".vscode/.java-bin"
+}
