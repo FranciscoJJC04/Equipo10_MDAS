@@ -1,12 +1,11 @@
-
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Sofas implements Proveedor {
+public class Sillas implements Proveedor {
     private String nombre;
     private List<Producto> stocks;
 
-    public Sofas(String nombre) {
+    public Sillas(String nombre) {
         this.nombre = nombre;
         this.stocks = new ArrayList<>();
     }
@@ -14,7 +13,7 @@ public class Sofas implements Proveedor {
     @Override
     public List<Producto> buscarProductos() {
         return stocks.stream()
-                .filter(p -> p.getUnidades() > 0 && p.getTipo().equalsIgnoreCase("Sofa"))
+                .filter(p -> p.getUnidades() > 0 && p.getTipo().equalsIgnoreCase("Silla"))
                 .collect(Collectors.toList());
     }
 
@@ -34,7 +33,7 @@ public class Sofas implements Proveedor {
 
     @Override
     public void agregarProducto(Producto producto) {
-        if (producto.getTipo().equalsIgnoreCase("Sofa")) {
+        if (producto.getTipo().equalsIgnoreCase("Silla")) {
             // Verificar si el producto ya existe, si es así sumar unidades
             boolean existe = false;
             for (Producto p : stocks) {
@@ -57,7 +56,7 @@ public class Sofas implements Proveedor {
 
     @Override
     public String getTipo() {
-        return "Sofa";
+        return "Silla";
     }
 
     public String getNombre() {
