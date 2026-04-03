@@ -8,10 +8,6 @@ import factory_method.menus.Menu;
 public class FactoryMethodApplication {
 
 	public static void main(String[] args) {
-		demo();
-	}
-
-	private static void demo() {
 		Factoria factoriaRestaurante = new FactoriaRestaurante();
 		Factoria factoriaLlevar      = new FactoriaLlevar();
 
@@ -24,8 +20,12 @@ public class FactoryMethodApplication {
 		menuRestaurante.getPlatos();
 		System.out.println("MENU LLEVAR");
 		menuLlevar.getPlatos();
-
 	}
+
+	
+		
+
+	
 
 
 }
