@@ -1,11 +1,11 @@
-package bridge_modular.proveedores;
+package bridge.proveedores;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import bridge_modular.modelo.Producto;
+import bridge.modelo.Producto;
 
 public class Sofas implements Proveedor {
     private final String nombre;

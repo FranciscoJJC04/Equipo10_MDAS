@@ -1,7 +1,8 @@
-package bridge_modular.proveedores;
+package bridge.proveedores;
 
 import java.util.List;
-import bridge_modular.modelo.Producto;
+
+import bridge.modelo.Producto;
 
 public interface Proveedor {
     List<Producto> buscarProductos();

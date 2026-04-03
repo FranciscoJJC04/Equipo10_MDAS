@@ -1,4 +1,4 @@
-package bridge_modular.modelo;
+package bridge.modelo;
 
 public class Producto {
     private String nombre;

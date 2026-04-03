@@ -10,8 +10,8 @@ import bridge.proveedores.Mesas;
 import bridge.proveedores.Sofas;
 import bridge.proveedores.SofasYMesas;
 
-public class BuscadorApp {
-    public static void ejecutar() {
+public class Main {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         Sofas empresaA = new Sofas("Empresa A");

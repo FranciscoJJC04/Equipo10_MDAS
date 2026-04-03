@@ -1,12 +1,12 @@
-package bridge_modular.buscadores;
+package bridge.buscadores;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import bridge_modular.modelo.Producto;
-import bridge_modular.proveedores.Proveedor;
+import bridge.modelo.Producto;
+import bridge.proveedores.Proveedor;
 
 public class BuscadorStockSofasYMesas extends BuscadorPorStock {
     private final String tipoProducto;

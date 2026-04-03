@@ -1,5 +1,5 @@
 public class Ejemplos {
-        public static void main(String[] args) throws Exception {
+    public static void crearEjemplos() throws Exception {
 
         SistemaLegacy legacy = new SistemaLegacy();
 

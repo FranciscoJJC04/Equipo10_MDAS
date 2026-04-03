@@ -17,8 +17,12 @@ public class Main {
 		menuRestaurante.getPlatos();
 		System.out.println("MENU LLEVAR");
 		menuLlevar.getPlatos();
-
 	}
+
+	
+		
+
+	
 
 
 

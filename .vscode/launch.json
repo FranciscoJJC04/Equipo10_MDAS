@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "factory_method.Main",
+            "projectName": "Equipo10_MDAS_ce6818cc"
+        },
+        {
+            "type": "java",
             "name": "Buscador",
             "request": "launch",
             "mainClass": "Buscador",
