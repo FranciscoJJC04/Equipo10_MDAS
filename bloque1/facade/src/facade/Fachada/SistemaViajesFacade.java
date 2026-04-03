@@ -74,7 +74,7 @@ public class SistemaViajesFacade {
             throw new IllegalArgumentException("Origen y destino son obligatorios");
         }
         if (personas <= 0) {
-            throw new IllegalArgumentException("El numero de personas debe ser mayor que 0");
+            throw new IllegalArgumentException("El numero de personas debe ser mayor que 0"); //IllegalArgumentException es una excepcion no verificada que no obliga a capturarla o declararla (cositas eh ;) ).
         }
     }
 }
