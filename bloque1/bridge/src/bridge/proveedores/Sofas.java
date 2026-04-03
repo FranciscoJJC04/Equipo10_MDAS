@@ -18,21 +18,21 @@ public class Sofas implements Proveedor {
 
     @Override
     public List<Producto> buscarProductos() {
-        return stocks.stream()
+        return stocks.stream()//el stream ya lo explique en proveedor
                 .filter(producto -> producto.getUnidades() > 0 && producto.getTipo().equalsIgnoreCase("Sofa"))
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Producto> buscarPorPrecio() {
-        return buscarProductos().stream()
+        return buscarProductos().stream()//el stream ya lo explique en proveedor
                 .sorted(Comparator.comparingDouble(Producto::getPrecio))
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Producto> buscarPorUnidades() {
-        return buscarProductos().stream()
+        return buscarProductos().stream() //el stream ya lo explique en proveedor
                 .sorted((p1, p2) -> Integer.compare(p2.getUnidades(), p1.getUnidades()))
                 .collect(Collectors.toList());
     }

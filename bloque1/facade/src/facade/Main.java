@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
@@ -12,19 +13,20 @@ public class Main {
         // Se crea una unica puerta de entrada al sistema (Facade).
         SistemaViajesFacade facade = new SistemaViajesFacade();
         Scanner scanner = new Scanner(System.in);
+        DateTimeFormatter formatoEspanol = DateTimeFormatter.ofPattern("dd-MM-uuuu");
 
         System.out.println("=== BUSCADOR DE VIAJES (PATRON FACADE) ===");
-        System.out.println("Formato de fecha obligatorio: AAAA-MM-DD");
+        System.out.println("Formato de fecha obligatorio: DD-MM-AAAA");
 
         boolean continuar = true;
         while (continuar) {
             try {
                 // Datos minimos que pide el enunciado para buscar un viaje de grupo.
-                System.out.print("\nIntroduce fecha de inicio (AAAA-MM-DD): ");
-                LocalDate inicio = LocalDate.parse(scanner.nextLine().trim());
+                System.out.print("\nIntroduce fecha de inicio (DD-MM-AAAA): ");
+                LocalDate inicio = LocalDate.parse(scanner.nextLine().trim(), formatoEspanol);
 
-                System.out.print("Introduce fecha de fin (AAAA-MM-DD): ");
-                LocalDate fin = LocalDate.parse(scanner.nextLine().trim());
+                System.out.print("Introduce fecha de fin (DD-MM-AAAA): ");
+                LocalDate fin = LocalDate.parse(scanner.nextLine().trim(), formatoEspanol);
 
                 System.out.print("Introduce ciudad de origen: ");
                 String origen = scanner.nextLine().trim();
@@ -56,7 +58,7 @@ public class Main {
                             + a.getFechaActividad() + " | tipo: " + a.getTipo());
                 }
             } catch (DateTimeParseException e) {
-                System.out.println("Error: la fecha debe tener formato AAAA-MM-DD.");
+                System.out.println("Error: la fecha debe tener formato DD-MM-AAAA.");
             } catch (NumberFormatException e) {
                 System.out.println("Error: el numero de personas debe ser un entero valido.");
             } catch (IllegalArgumentException e) {

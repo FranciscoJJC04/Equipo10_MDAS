@@ -1,4 +1,5 @@
-import java.io.File;
+package adapter;
+
 import java.io.FileWriter;
 
 public class Adapater implements  Adaptador{

@@ -1,3 +1,5 @@
+package adapter;
+
 public interface  Adaptador {
 
     void unirFicheros(String f1, String f2, String destino) throws Exception;

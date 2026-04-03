@@ -18,28 +18,28 @@ public class Mesas implements Proveedor {
 
     @Override
     public List<Producto> buscarProductos() {
-        return stocks.stream()
+        return stocks.stream() //Filtra los productos para incluir solo aquellos que son mesas y tienen unidades disponibles
                 .filter(producto -> producto.getUnidades() > 0 && producto.getTipo().equalsIgnoreCase("Mesa"))
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Producto> buscarPorPrecio() {
-        return buscarProductos().stream()
+        return buscarProductos().stream() //Ordena los productos por precio de menor a mayor utilizando un comparador
                 .sorted(Comparator.comparingDouble(Producto::getPrecio))
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Producto> buscarPorUnidades() {
-        return buscarProductos().stream()
+        return buscarProductos().stream() //Ordena los productos por unidades disponibles de mayor a menor utilizando un comparador
                 .sorted((p1, p2) -> Integer.compare(p2.getUnidades(), p1.getUnidades()))
                 .collect(Collectors.toList());
     }
 
     @Override
     public void agregarProducto(Producto producto) {
-        if (!producto.getTipo().equalsIgnoreCase("Mesa")) {
+        if (!producto.getTipo().equalsIgnoreCase("Mesa")) { //equalsIgnoreCase sive pa comparar el tipo del producto sin importar mayús o minús
             return;
         }
         for (Producto existente : stocks) {

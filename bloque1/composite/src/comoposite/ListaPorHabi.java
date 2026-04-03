@@ -1,18 +1,26 @@
+package comoposite;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListaPorHabi implements Contador {
-    //Esto tendra una sera un conjunto de coasas a tener en cuenta
-    //pwro no por elloes una lista List<AparatoElectrico> para medir su consumo
-    private List<Contador> listacacharros=new ArrayList<>();
-    //no se pude poner añadir aaaaaaaaaaaaaaa
-    public void adherir(Contador cont){listacacharros.add(cont);}
+    //Composite que agrupa espacios y aparatos (edificios, salas, etc.)
+    private String nombre;
+    private List<Contador> componentes = new ArrayList<>();
+    
+    public ListaPorHabi(String nombre){
+        this.nombre = nombre;
+    }
+    
+    public void adherir(Contador cont){
+        componentes.add(cont);
+    }
     
     @Override
     public float getConsumoGlobal(){
         float total=0;
-        for(Contador cont : listacacharros){
-            total=cont.getConsumoGlobal()+total;
+        for(Contador cont : componentes){
+            total += cont.getConsumoGlobal();
         }
         return total;
     }
@@ -20,10 +28,27 @@ public class ListaPorHabi implements Contador {
     @Override
     public float getCoste(){
         float total=0;
-        for(Contador cont : listacacharros){
-            total=cont.getCoste()+total;
+        for(Contador cont : componentes){
+            total += cont.getCoste();
         }    
         return total;
+    }
+    
+    public String getNombre(){
+        return nombre;
+    }
+    
+    public void mostrarDetalles(String indentacion){
+        System.out.println(indentacion + "[ESPACIO] " + nombre + ": " + String.format("%.2f", getConsumoGlobal()) + " kWh | Coste: " + String.format("%.2f EUR", getCoste()));
+        for(Contador cont : componentes){
+            if(cont instanceof Aparatoelectrico){
+                Aparatoelectrico aparato = (Aparatoelectrico) cont;
+                System.out.println(indentacion + "  [APARATO] " + aparato.getNombre() + ": " + String.format("%.2f", aparato.getConsumoGlobal()) + " kWh | Coste: " + String.format("%.2f EUR", aparato.getCoste()));
+            } else if(cont instanceof ListaPorHabi){
+                ListaPorHabi espacio = (ListaPorHabi) cont;
+                espacio.mostrarDetalles(indentacion + "  ");
+            }
+        }
     }
 
 

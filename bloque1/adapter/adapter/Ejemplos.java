@@ -1,3 +1,5 @@
+package adapter;
+
 public class Ejemplos {
     public static void crearEjemplos() throws Exception {
 

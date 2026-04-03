@@ -1,3 +1,5 @@
+package adapter;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,14 +10,14 @@ import java.util.List;
 public class SistemaLegacy {
     
     public void anadirTexto(String fichero, String texto) throws IOException {
-        FileWriter fw = new FileWriter(fichero, true);
+        FileWriter fw = new FileWriter(fichero, true); //pa añadir sin borrar lo anterior
         fw.write(texto + "\n");
         fw.close();
     }
 
     public String extraerParrafo(String fichero, int inicio, int fin) throws IOException {
         List<String> lineas = Files.readAllLines(Paths.get(fichero));
-        StringBuilder resultado = new StringBuilder();
+        StringBuilder resultado = new StringBuilder();//pa mapear un fichero y luego escribirlo
 
         for (int i = inicio - 1; i < fin && i < lineas.size(); i++) {resultado.append(lineas.get(i)).append("\n");}
         return resultado.toString();

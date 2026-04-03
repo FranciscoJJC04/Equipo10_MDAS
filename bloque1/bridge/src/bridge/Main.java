@@ -1,4 +1,4 @@
-package bridge.app;
+package bridge;
 
 import java.util.List;
 import java.util.Scanner;
@@ -10,8 +10,8 @@ import bridge.proveedores.Mesas;
 import bridge.proveedores.Sofas;
 import bridge.proveedores.SofasYMesas;
 
-public class BuscadorApp {
-    public static void ejecutar() {
+public class Main {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         Sofas empresaA = new Sofas("Empresa A");
@@ -37,17 +37,36 @@ public class BuscadorApp {
 
         int opcion = scanner.nextInt();
 
+        System.out.println("\nSeleccione el tipo de producto:");
+        System.out.println("1. Sofas");
+        System.out.println("2. Mesas");
+        System.out.println("3. Ver todo");
+        System.out.print("\nOpcion: ");
+
+        int tipo = scanner.nextInt();
+        String tipoProducto = null;
+
+        if (tipo == 1) {
+            tipoProducto = "Sofa";
+        } else if (tipo == 2) {
+            tipoProducto = "Mesa";
+        } else if (tipo != 3) {
+            System.out.println("Opcion de tipo no valida.");
+            scanner.close();
+            return;
+        }
+
         System.out.println("\n--- RESULTADOS DEL CATALOGO COMPLETO (A + B + C) ---");
 
         if (opcion == 1) {
-            BuscadorPrecioSofasYMesas buscadorPrecio = new BuscadorPrecioSofasYMesas(empresaA);
+            BuscadorPrecioSofasYMesas buscadorPrecio = new BuscadorPrecioSofasYMesas(empresaA, tipoProducto);
             buscadorPrecio.agregarProveedor(empresaB);
             buscadorPrecio.agregarProveedor(empresaC);
 
             List<Producto> resultados = buscadorPrecio.buscarOrdenadoPorPrecio();
             resultados.forEach(producto -> System.out.println("  EUR " + producto.getPrecio() + " - " + producto.getNombre() + " (" + producto.getTipo() + ")"));
         } else if (opcion == 2) {
-            BuscadorStockSofasYMesas buscadorStock = new BuscadorStockSofasYMesas(empresaA);
+            BuscadorStockSofasYMesas buscadorStock = new BuscadorStockSofasYMesas(empresaA, tipoProducto);
             buscadorStock.agregarProveedor(empresaB);
             buscadorStock.agregarProveedor(empresaC);
 

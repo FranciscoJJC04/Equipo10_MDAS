@@ -45,9 +45,10 @@ public class Producto {
         return nombre.equals(producto.nombre);
     }
 
+    
     @Override
     public int hashCode() {
-        return nombre.hashCode();
+        return nombre.hashCode(); // Utiliza el hash del nombre para generar el código hash del producto (como un id ma o menos, cosas del import)
     }
 
     @Override
